@@ -5,15 +5,20 @@
 
 import random
 r = random.randint(1, 100)
+count = 0  
+	# 要寫再while的外面，若寫在裡面，代表每進入while一次，count就又變回0
 
 while True:
+	count += 1   # count = count + 1 的速寫法
 	num = input('請輸入數字:')
 	num = int(num)
 	if num == r:
 		print('Bingo~! 答案是', r)
+		print('經過', count, '次後，終於猜對了!')
 		break
 	else:
 		if num > r:
 			print('比答案大')
 		else:
-			print('比答案小')		
+			print('比答案小')
+	print('這是你猜的第', count, '次')				
